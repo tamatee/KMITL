@@ -1,6 +1,6 @@
 package packA;
 
-public class Salesperson extends Programmer{
+public class Salesperson extends Employee implements SalesRoles{
     private int target;
     public Salesperson(String n, int sal, int exp, int assignedTarget) {
        super(n, sal, exp);
@@ -19,7 +19,6 @@ public class Salesperson extends Programmer{
         salary += (salary/10);
         super.setSalary(salary);
     }
-    @Override
     public void setSalary(int incresedAmount) {
         super.setSalary(salary + incresedAmount);
     }

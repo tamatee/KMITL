@@ -3,7 +3,7 @@ package packA;
 /**
  * Accountant
  */
-public class Accountant extends Programmer {
+public class Accountant extends Employee {
     private static String companyName = "berk barn jamkad";
     private int experience;
     private String specialty;
@@ -46,7 +46,7 @@ public class Accountant extends Programmer {
 
     @Override
     public void sayHi() {
-        System.out.println(super.getName() + " says hello");
+        System.out.println("hi from Accountant");
     }
 
     public static String tellMyRole() {

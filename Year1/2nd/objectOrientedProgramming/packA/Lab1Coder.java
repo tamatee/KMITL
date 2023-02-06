@@ -1,52 +1,52 @@
-package Lab1;
+package packA;
 import java.util.ArrayList;
-class Lab1Coder {
+public class Lab1Coder {
     private String name;
     private ArrayList<String> lang = new ArrayList<>();
     ArrayList<String> ans = new ArrayList<>();
     int experience;
     String a = "";
-    Lab1Coder() {
+    public Lab1Coder() {
 
     }
 
-    Lab1Coder(String name, int experience) {
+    public Lab1Coder(String name, int experience) {
         this.name = name;
         this.experience = experience;
     }
 
-    Lab1Coder(String name) {
+    public Lab1Coder(String name) {
         this.name = name;
         this.experience = 0;
     }
 
-    void setName(String name) {
+    public  void setName(String name) {
         this.name = name;
     }
 
-    String getName() {
+    public  String getName() {
         return name;
     }
 
-    void setLanguage(String... lang) {
+    public void setLanguage(String... lang) {
         for (String string : lang) {
             this.lang.add(string);
         }
     }
 
-    ArrayList<String> getLanguage() {
+    public ArrayList<String> getLanguage() {
         return this.lang;
     }
 
-    void setExperience(int experience) {
+    public void setExperience(int experience) {
         this.experience = experience;
     }
 
-    int getExperience() {
+    public int getExperience() {
         return experience;
     }
 
-    ArrayList<String> findCommonLanguages(Lab1Coder other) {
+    public ArrayList<String> findCommonLanguages(Lab1Coder other) {
         for (String i : this.getLanguage()) {
             for (String j : other.getLanguage()) {
                 if (i.equals(j)) {

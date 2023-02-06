@@ -1,5 +1,5 @@
-package Lab1;
 import java.util.ArrayList;
+import packA.*;
 
 public class Lab1Driver {
     static Lab1Coder keng;

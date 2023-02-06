@@ -1,6 +1,6 @@
 package packA;
 
-public class Programmer {
+public class Programmer extends Employee{
     private String name;
     protected int salary;
     private int experience;
