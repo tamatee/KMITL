@@ -20,7 +20,9 @@ public class Lab5_650426 {
     }
 
     public static void q2() {
-        q2IndexOfLargestEvenValue = (arr) -> IntStream.range(0, arr.length).filter(i -> arr[i] == Arrays.stream(arr).filter(n -> n%2 == 0).max().getAsInt()).findFirst().orElse(-1);
+        q2IndexOfLargestEvenValue = (arr) -> IntStream.range(0, arr.length)
+        .filter(i -> arr[i] == Arrays.stream(arr).filter(n -> n%2 == 0)
+        .max().getAsInt()).findFirst().orElse(-1);
         System.out.println(q2IndexOfLargestEvenValue.calculate(data));
     }
 
