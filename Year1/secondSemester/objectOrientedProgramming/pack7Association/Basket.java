@@ -6,7 +6,7 @@ public class Basket {
     private ArrayList<LineItem> items = new ArrayList<>();
 
     public void showItemsInBasket() {
-
+        
     }
 
     public void putInBasket(LineItem item) {
