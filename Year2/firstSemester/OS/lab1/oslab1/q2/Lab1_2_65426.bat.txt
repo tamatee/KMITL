@@ -1,0 +1,12 @@
+mkdir sub1
+cd sub1
+echo "" > F11.txt
+cp F11.txt ./F12.txt
+mkdir sub3
+cp F11.txt ./sub3/F13.txt
+cp F12.txt ../
+mkdir ../sub2
+cp F11.txt ../sub2/F21.txt
+cp F12.txt ../sub2/F22.txt
+cp sub3/F13.txt ../sub2/F23.txt
+mv ~/oslab1/q2/sub2/F22.txt ~/oslab1/q2/sub2/F22.doc

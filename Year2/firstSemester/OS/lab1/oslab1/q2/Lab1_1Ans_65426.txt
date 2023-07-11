@@ -1,0 +1,7 @@
+ผมใช้ macbook ครับ
+1.11) cp sub/test1.txt ./
+1.12) cp sub/test1.txt ./test2.txt
+1.13) mkdir ~/oslab1/abc
+1.16) rm test2.txt
+1.19) rm -rf oslab1
+1.20) find . -name "format.com" -print
