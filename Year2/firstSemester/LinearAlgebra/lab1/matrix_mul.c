@@ -38,6 +38,7 @@ int main()
             scanf("%d", &*(*(myArray+i)+j));
         }
 
+	myArray = matrix_mul(3,3,3, myArray, myArray);
     printf("The introduced Array:\n");
     for (i = 0; i < n; i++)
     {
