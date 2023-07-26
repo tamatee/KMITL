@@ -1,4 +1,5 @@
 import mysql.connector
+
 my_con = mysql.connector.connect(
     host="remotemysql.com",
     user="bPHiiRCWTe",
@@ -12,7 +13,7 @@ cursor = my_con.cursor()
 print('\nprinting character names showing only lastname')
 cursor.execute("SELECT * FROM characters RIGHT JOIN anime ON characters.animeFK = anime.id")
 for x in cursor:
-    if x[0] == 3 or x[0] == 4 :
+    if x[0] == 3 or x[0] == 4:
         print(x, sep=" ")
 
 # 1.4
@@ -27,7 +28,7 @@ for x in cursor:
 # 1.5
 cursor.execute("SELECT * FROM characters RIGHT JOIN anime ON characters.animeFK = anime.id")
 for x in cursor:
-    if x[0] == 501470 :
+    if x[0] == 501470:
         print(x[0], x[1], x[2], x[3], x[4], x[6], x[7], sep=" ")
 
 # print('\nprinting anime names')

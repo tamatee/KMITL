@@ -1,8 +1,5 @@
-from audioop import add
-from gzip import FNAME
-from tkinter import INSERT
-from turtle import title
 import mysql.connector
+
 my_con = mysql.connector.connect(
     host="remotemysql.com",
     user="bPHiiRCWTe",
@@ -11,7 +8,7 @@ my_con = mysql.connector.connect(
 )
 print('connected!')
 cursor = my_con.cursor()
-#1.3
+# 1.3
 print('1.3')
 # cursor.execute("SELECT * FROM characters")
 cursor.execute("SELECT * FROM characters RIGHT JOIN anime ON characters.animeFK = anime.id")
@@ -27,22 +24,22 @@ for x in cursor:
 # valC = ('รหัส(edit)', 'Name(edit)', 'LastName(edit)', 'popularity(edit)', 'มาจากเรื่อง id ไหน') #กำหนดค่า id, fName, lName, popularity, animeFK
 # cursor.execute(characters, valC)#ส่งข้อมูลCharactersไปท่ี่ตารางcharacter
 # บรรทัดที่commentไว้ใช้สำหรับใส้ข้อมูล
-#1.4
+# 1.4
 print('1.4')
 cursor.execute("SELECT * FROM characters RIGHT JOIN anime ON characters.animeFK = anime.id")
 for x in cursor:
     if x[0] == 504260 or x[0] == 504261:
         id = x
         print(id, sep=" ")
-#1.5
+# 1.5
 print('1.5')
 cursor.execute("SELECT * FROM characters RIGHT JOIN anime ON characters.animeFK = anime.id")
 for x in cursor:
     id = x[0]
     fName = x[1]
-    lName =x[2]
+    lName = x[2]
     popularity = x[3]
-    animeTitle = x[6]#เกิดขึ้นได้เพราะเอาตารางหลังมาjoin
+    animeTitle = x[6]  # เกิดขึ้นได้เพราะเอาตารางหลังมาjoin
     if x[0] == 504260 or x[0] == 504261:
         print(id, fName, lName, popularity, animeTitle, sep=" ")
 cursor.close()

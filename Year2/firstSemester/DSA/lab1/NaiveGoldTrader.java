@@ -1,6 +1,9 @@
+package DSA.lab1;
+
 import java.util.Scanner;
 
 public class NaiveGoldTrader {
+
     static int ranReadGoldPrices(int[] goldPrices, int n) {
         for (int i = 0; i < n; i++) {
             goldPrices[i] = (int) Math.round(Math.random() * 20000 + 20000);

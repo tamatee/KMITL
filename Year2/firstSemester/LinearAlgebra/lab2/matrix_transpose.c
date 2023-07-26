@@ -30,9 +30,9 @@ int main() {
     scanf("%d", &cols);
 
     // Allocate memory for the original matrix
-    int **matrix = (int **)malloc(rows * sizeof(int *));
+    int **matrix = (int **) malloc(rows * sizeof(int *));
     for (int i = 0; i < rows; i++) {
-        matrix[i] = (int *)malloc(cols * sizeof(int));
+        matrix[i] = (int *) malloc(cols * sizeof(int));
     }
 
     // Input the matrix elements from the user
@@ -44,9 +44,9 @@ int main() {
     }
 
     // Allocate memory for the transposed matrix
-    int **transposed = (int **)malloc(cols * sizeof(int *));
+    int **transposed = (int **) malloc(cols * sizeof(int *));
     for (int i = 0; i < cols; i++) {
-        transposed[i] = (int *)malloc(rows * sizeof(int));
+        transposed[i] = (int *) malloc(rows * sizeof(int));
     }
 
     printf("Original Matrix:\n");

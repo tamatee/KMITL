@@ -1,10 +1,10 @@
 k = 1
 n = 2 * k + 1
 p = [0] * n
-samplespace = n**n
+samplespace = n ** n
 event = 0
 
-for i in range(n**n):
+for i in range(n ** n):
     p_copy = p.copy()
     p_copy.sort()
     p[0] += 1
