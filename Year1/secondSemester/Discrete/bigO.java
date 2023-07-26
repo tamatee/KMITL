@@ -1,4 +1,6 @@
-public class bigo {
+package Discrete;
+
+class bigO {
     public static void quickSort(String[] a, int start, int end) {
         // index for the "left-to-right scan"
         int i = start;
