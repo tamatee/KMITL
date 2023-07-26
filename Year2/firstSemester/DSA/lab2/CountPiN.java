@@ -4,22 +4,22 @@ public class CountPiN {
             return false;
         if (n <= 3)
             return true;
-	if ((n%2==0) || (n%3==0)) {
-		return false;
-	}
-        int m = (int)Math.sqrt(n);
-        for (int i = 2; i <= m; i+=6) {
+        if ((n % 2 == 0) || (n % 3 == 0)) {
+            return false;
+        }
+        int m = (int) Math.sqrt(n);
+        for (int i = 2; i <= m; i += 6) {
             if (m % i == 0)
                 return false;
-	    if (m%(i+2)==0) {
-		    return false;
-	    }
+            if (m % (i + 2) == 0) {
+                return false;
+            }
         }
         return true;
     }
 
     public static void main(String[] args) {
-	    System.out.println("isPrime0");
+        System.out.println("isPrime0");
         for (int N = 100000; N <= 1000000; N += 100000) {
             long start = System.currentTimeMillis();
             int count = 0;
