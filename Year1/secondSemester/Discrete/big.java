@@ -1,6 +1,3 @@
-/**
- * bigo
- */
 public class bigo {
     public static void quickSort(String[] a, int start, int end) {
         // index for the "left-to-right scan"
@@ -53,11 +50,6 @@ public class bigo {
         }
     }
 
-    /**
-     * This method facilitates the quickSort method's need to swap two elements,
-     * Towers of Hanoi style.
-     */
-    public static int fatorial
     private static void swap(String[] a, int i, int j) {
         String temp = a[i];
         a[i] = a[j];
