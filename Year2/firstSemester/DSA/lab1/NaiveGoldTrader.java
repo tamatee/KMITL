@@ -1,23 +1,19 @@
-import java.io.IOException;
-import java.nio.file.NoSuchFileException;
-import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class NaiveGoldTrader {
-    static int RanreadGoldPrices(int goldPrices[], int n) {
+    static int ranReadGoldPrices(int[] goldPrices, int n) {
         for (int i = 0; i < n; i++) {
             goldPrices[i] = (int) Math.round(Math.random() * 20000 + 20000);
         }
-        return n;
+        return 0;
     }
 
-    public static void main(String args[]) {
-        int goldPrices[] = new int[1000000];
-	Scanner a = new Scanner(System.in);
-	int n = a.nextInt();
-	a.close();
-        RanreadGoldPrices(goldPrices, n);
-        int bestBuyDate = 0;
+    public static void main(String[] args) {
+        int[] goldPrices = new int[1000000];
+        Scanner a = new Scanner(System.in);
+        int n = a.nextInt();
+        a.close();
+        int bestBuyDate = ranReadGoldPrices(goldPrices, n);
         int bestSellDate = 0;
         int maxProfit = Integer.MIN_VALUE;
         long count = 0;
