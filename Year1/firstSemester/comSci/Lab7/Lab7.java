@@ -1,4 +1,4 @@
-package Lab7;
+package comSci.Lab7;
 
 import java.util.HashMap;
 public class Lab7 {

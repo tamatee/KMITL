@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DemoHashMapandArrayList {
+class DemoHashMapAndArrayList {
     public static void main(String... args) {
         // and Demo HashMap
         CSMovie m1 = new CSMovie("a", 2019);
@@ -46,6 +46,6 @@ class CSMovie {
     }
 
     public String toString() {
-        return "" + title + " " + voteCnt;
+        return title + " " + voteCnt;
     }
 }

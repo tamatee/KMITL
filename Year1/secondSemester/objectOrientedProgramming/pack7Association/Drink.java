@@ -1,4 +1,4 @@
-package pack7Association;
+package objectOrientedProgramming.pack7Association;
 
 public class Drink extends Product {
     public Drink(String n, String d) {

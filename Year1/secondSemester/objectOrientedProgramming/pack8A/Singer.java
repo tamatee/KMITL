@@ -1,4 +1,4 @@
-package pack8A;
+package objectOrientedProgramming.pack8A;
 
 public class Singer {
     private String name;

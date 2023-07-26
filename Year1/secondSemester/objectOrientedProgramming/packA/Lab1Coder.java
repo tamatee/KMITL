@@ -1,4 +1,4 @@
-package packA;
+package objectOrientedProgramming.packA;
 import java.util.ArrayList;
 public class Lab1Coder {
     private String name;

@@ -1,3 +1,5 @@
+package proFunLabTest;
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -40,7 +42,7 @@ class ProFun14StreamDemo {
         sc.nextLine();
         for (int i = 0; i < n; i++) {
             String all = sc.nextLine();
-            String sp[] = all.split(" ");
+            String[] sp = all.split(" ");
             String name = sp[0];
             String dept = sp[1];
             int year = Integer.parseInt(sp[2]);
@@ -51,8 +53,8 @@ class ProFun14StreamDemo {
     }
 
     void oldWay1() {
-        // //each querry for each submission
-        // //eList is always the sane for all querry
+        //each query for each submission
+        //eList is always the sane for all query
        ArrayList<String> stringList = new ArrayList<>();
        for (ProFun14Employee  e : eList) {
             stringList.add(e.getName());
@@ -61,8 +63,8 @@ class ProFun14StreamDemo {
     }
 
     void oldWay2() {
-        // //each querry for each submission
-        // //eList is always the sane for all querry
+        //each query for each submission
+        //eList is always the sane for all query
        ArrayList<String> list = new ArrayList<>();
        
         for (ProFun14Employee e : eList) {
@@ -73,9 +75,9 @@ class ProFun14StreamDemo {
     }
 
     void oldWay3() {
-        // //each querry for each submission
-        // //eList is always the sane for all querry
-    //    ArrayList<String> list = new ArrayList<>();
+        //each query for each submission
+        //eList is always the sane for all query
+        //ArrayList<String> list = new ArrayList<>();
        int a;
        int sum = 0;
         for (ProFun14Employee e : eList) {
@@ -86,8 +88,8 @@ class ProFun14StreamDemo {
     }
 
     void oldWay4() {
-        //each querry for each submission
-        //eList is always the sane for all querry
+        //each query for each submission
+        //eList is always the sane for all query
        ArrayList<String> list = new ArrayList<>();
        ArrayList<Integer> lowest = new ArrayList<>();
         for (ProFun14Employee e : eList) {
@@ -103,8 +105,8 @@ class ProFun14StreamDemo {
     }
 
     void oldWay5() {
-        //each querry for each submission
-        //eList is always the sane for all querry
+        //each query for each submission
+        //eList is always the sane for all query
        ArrayList<String> list = new ArrayList<>();
         for (ProFun14Employee e : eList) {
            if (e.getDepartment().equals(sec)) {
@@ -113,19 +115,14 @@ class ProFun14StreamDemo {
         }
         System.out.println(list);
     }
-        void streamWay(String deptName) {
+        void streamWay() {
         String Query = "Q1 list contain all employee's names";
-        // List<String> list = eList.stream()
-        //         .map(e -> e.getName()).collect(Collectors.toList());
-        System.out.print(Query + " ");
+            System.out.print(Query + " ");
         eList.stream()
-                .map(e -> e.getName()).forEach(i -> System.out.print(i + " "));
+                .map(ProFun14Employee::getName).forEach(i -> System.out.print(i + " "));
         System.out.println();
-            
-        // System.out.print(Query + " ");
-        // System.out.println(list); // [D, B, C, A]
 
-        Query = "Q2 list employee who has started work before 2015";
+            Query = "Q2 list employee who has started work before 2015";
         int yearThreshold = 2015;
         List<ProFun14Employee> empBefore2015;
         empBefore2015 = eList.stream()
@@ -136,22 +133,21 @@ class ProFun14StreamDemo {
         // [IT B(2011) 5000, IT C(2014) 6000]
 
         Query = "Q3 Compute sum of salaries of employee";
-        int x = eList.stream()
-                .collect(Collectors.summingInt(ProFun14Employee::getSalary));
+        int x = eList.stream().mapToInt(ProFun14Employee::getSalary).sum();
         System.out.print(Query + " ");
         System.out.printf("%,d%n", x); // 27,000
 
         Query = "Q4 Employee with lowest salary : ";
-        ProFun14Employee emp;
+        Optional<ProFun14Employee> emp;
         
-        emp = eList.stream()
-                .min(Comparator.comparing(ProFun14Employee::getSalary))
+        emp = Optional.of(eList.stream()
+                        .min(Comparator.comparing(ProFun14Employee::getSalary)))
                 .get();
         System.out.print(Query + " ");
         System.out.println(emp); // IT B(2011) 5000
-        Query = "Q5 List employee who work in given deptname (same order on eList)";
+        Query = "Q5 List employee who work in given dept-name (same order on eList)";
         List<ProFun14Employee> result = eList.stream()
-                .filter(e -> e.getDepartment().equals(deptName))
+                .filter(e -> e.getDepartment().equals("IT"))
                 .collect(Collectors.toList());
         System.out.print(Query + " ");
         System.out.println(result);
@@ -170,6 +166,6 @@ class Complete {
         demo.oldWay4();
         System.out.print("Q5: ");
         demo.oldWay5();
-        demo.streamWay("IT");
+        demo.streamWay();
     }
 }

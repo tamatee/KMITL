@@ -1,4 +1,4 @@
-package packA;
+package objectOrientedProgramming.packA;
 
 public class Programmer extends Employee{
     private String name;

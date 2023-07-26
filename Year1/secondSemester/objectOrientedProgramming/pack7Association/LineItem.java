@@ -1,4 +1,4 @@
-package pack7Association;
+package objectOrientedProgramming.pack7Association;
 
 public class LineItem {
     private Product product;

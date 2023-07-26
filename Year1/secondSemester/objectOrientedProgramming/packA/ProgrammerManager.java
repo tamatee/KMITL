@@ -1,7 +1,7 @@
-package packA;
+package objectOrientedProgramming.packA;
 import java.util.ArrayList;
 
-public class ProgrammerManager extends Programmer implements ManagerRoles{
+public class ProgrammerManager extends Programmer implements ManagerRoles {
    ArrayList<String> c = new ArrayList<>();
    public ProgrammerManager() {
    }

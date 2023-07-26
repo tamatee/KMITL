@@ -1,4 +1,4 @@
-package pack7Association;
+package objectOrientedProgramming.pack7Association;
 
 public abstract class Product {
     protected String pName;

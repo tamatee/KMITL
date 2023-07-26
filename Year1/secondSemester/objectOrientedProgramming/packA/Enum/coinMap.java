@@ -1,4 +1,4 @@
-package packA.Enum;
+package objectOrientedProgramming.packA.Enum;
 
 public enum coinMap {
     

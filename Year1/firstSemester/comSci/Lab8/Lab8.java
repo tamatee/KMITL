@@ -1,4 +1,4 @@
-package Lab8;
+package comSci.Lab8;
 import java.util.*;
 
 public class Lab8 {

@@ -1,4 +1,4 @@
-package Lab2o;
+package proFun.Lab2o;
 
 class Lab2_65426{
     public static void main(String[] args) {

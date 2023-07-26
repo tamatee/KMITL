@@ -1,4 +1,4 @@
-package packA;
+package objectOrientedProgramming.packA;
 
 public class Salesperson extends Employee implements SalesRoles{
     private int target;

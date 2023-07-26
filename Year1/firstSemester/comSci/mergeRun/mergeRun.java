@@ -1,4 +1,4 @@
-package mergeRun;
+package comSci.mergeRun;
 
 import java.util.*;
 public class mergeRun {

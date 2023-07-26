@@ -1,4 +1,4 @@
-package Lab3o;
+package proFun.Lab3o;
 class Lab3Q3_65426{
     public static void main(String[] args){
          int c = 0;

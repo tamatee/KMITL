@@ -1,4 +1,4 @@
-package pack7Association;
+package objectOrientedProgramming.pack7Association;
 
 public class Noodles extends Product {
     public Noodles(String n, String d) {

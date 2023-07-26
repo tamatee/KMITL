@@ -1,4 +1,4 @@
-package packA;
+package objectOrientedProgramming.packA;
 
 public class Customer implements CanPay{
     private String name;

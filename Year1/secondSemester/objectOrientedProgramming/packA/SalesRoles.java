@@ -1,4 +1,4 @@
-package packA;
+package objectOrientedProgramming.packA;
 
 /**
  * SalesRoles

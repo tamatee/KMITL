@@ -1,4 +1,4 @@
-package pack8A;
+package objectOrientedProgramming.pack8A;
 
 public class NumberProcessor {
     public void printHalf(int n) {

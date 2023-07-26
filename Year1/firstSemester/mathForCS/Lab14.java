@@ -1,4 +1,5 @@
 package mathForCS;
+@SuppressWarnings("ALL")
 class Lab14 {
 
     public static void main(String[] args) {

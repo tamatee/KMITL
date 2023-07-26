@@ -1,3 +1,5 @@
+package comSci;
+
 import java.util.*;
 public class Alpha {
     int [][] aj;

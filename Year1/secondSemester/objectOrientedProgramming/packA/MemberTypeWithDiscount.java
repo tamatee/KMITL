@@ -1,4 +1,4 @@
-package packA;
+package objectOrientedProgramming.packA;
 
 public enum MemberTypeWithDiscount {
     NONE(0, 0), SILVER(0.5, 0.5),GOLD(1.0, 2.0), PREMIUM(3.0, 4.5);

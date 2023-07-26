@@ -1,4 +1,4 @@
-package pack8A;
+package objectOrientedProgramming.pack8A;
 
 public interface HalfValueInterface {
     public void printHalf(int n);
