@@ -1,80 +1,98 @@
 package DSA.lab3;
 
-public class MyArray {
-    int MAX_SIZE = 5;
-    int[] data = new int[MAX_SIZE];
-    int size = 0;
-
-    public int getAt(int i) {
-        return data[i];
-    }
-
-    public void setAt(int d, int i) {
-        data[i] = d;
-    }
-
-    public boolean isFull() {
-        return size == MAX_SIZE;
-    }
-
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
-    public int add(int d) {
-        if (isFull()) return -1;
-        data[size++] = d;
-        return size;
-    }
-
-    public void inset(int d, int index) {
-        for (int j = size; j < index; j++) {
-            data[j] = data[j - 1];
+public class ArrayTester {
+    public static void main(String[] args) {
+        int N = 0x989680; //hex(10000000)
+        while (N <= 0x5f5e100) { //hex(100000000)
+            long start = System.currentTimeMillis();
+            MyArray mArray = new MyArray();
+            for (int n = 1; n < N; n++) {
+                if (!mArray.isFull()) {
+                    mArray.add((int) (Math.random() * 0x3e8)); //hex(1000)
+                }
+            }
+            long time = (System.currentTimeMillis() - start);
+            System.out.println(N + " \t" + time);
+            N += 0x989680; //hex(10000000)
         }
-        data[index] = d;
-        size++;
     }
 
-    public int find(int d) {
-        for (int i = 0; i < size; i++)
-            if (data[i] == d) return i;
-        return -1;
-    }
+    public static class MyArray {
+        int MAX_SIZE = 5;
+        int[] data = new int[MAX_SIZE];
+        int size = 0;
 
-    public int binarySearch(int d) {
-        int a = 0, b = size-1;
-        while (a <= b) {
-            int m = (a + b) / 2;
-            if (data[m] == d) return m;
-            if ( d < data[m])b = m-1;
-            else a = m + 1;
+        public int getAt(int i) {
+            return data[i];
         }
-        return -1;
-    }
 
-    public void delete(int index) {
-        for (int i = index; i < size-1; i++) {
-            data[i] = data[i + 1];
+        public void setAt(int d, int i) {
+            data[i] = d;
         }
-        size--;
-    }
 
-    public void expand() {
-        MAX_SIZE = 2*MAX_SIZE;
-        int[] newData = new int[MAX_SIZE];
-        System.arraycopy(data,0,newData,0,size);
-        data = newData;
-    }
-
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[");
-        for (int i = 0; i < size - 1; i++) {
-            sb.append(data[i]);
-            sb.append(",");
+        public boolean isFull() {
+            return size == MAX_SIZE;
         }
-        if (size > 0) sb.append(data[size - 1]);
-        sb.append("]");
-        return sb.toString();
+
+        public boolean isEmpty() {
+            return size == 0;
+        }
+
+        public int add(int d) {
+            if (isFull()) return -1;
+            data[size++] = d;
+            return size;
+        }
+
+        public void inset(int d, int index) {
+            for (int j = size; j < index; j++) {
+                data[j] = data[j - 1];
+            }
+            data[index] = d;
+            size++;
+        }
+
+        public int find(int d) {
+            for (int i = 0; i < size; i++)
+                if (data[i] == d) return i;
+            return -1;
+        }
+
+        public int binarySearch(int d) {
+            int a = 0, b = size - 1;
+            while (a <= b) {
+                int m = (a + b) / 2;
+                if (data[m] == d) return m;
+                if (d < data[m]) b = m - 1;
+                else a = m + 1;
+            }
+            return -1;
+        }
+
+        public void delete(int index) {
+            for (int i = index; i < size - 1; i++) {
+                data[i] = data[i + 1];
+            }
+            size--;
+        }
+
+        public void expand() {
+            MAX_SIZE = 2 * MAX_SIZE;
+            int[] newData = new int[MAX_SIZE];
+            System.arraycopy(data, 0, newData, 0, size);
+            data = newData;
+        }
+
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("[");
+            for (int i = 0; i < size - 1; i++) {
+                sb.append(data[i]);
+                sb.append(",");
+            }
+            if (size > 0) sb.append(data[size - 1]);
+            sb.append("]");
+            return sb.toString();
+        }
     }
 }

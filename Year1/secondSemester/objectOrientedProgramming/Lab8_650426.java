@@ -1,7 +1,9 @@
+package objectOrientedProgramming;
+
 import java.util.List;
 import java.util.function.Consumer;
 
-import pack8A.*;
+import objectOrientedProgramming.pack8A.*;
 import java.util.*;
 
 public class Lab8_650426 {

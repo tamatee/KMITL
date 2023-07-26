@@ -1,4 +1,8 @@
-import packA.*;
+package objectOrientedProgramming;
+
+import objectOrientedProgramming.packA.Accountant;
+import objectOrientedProgramming.packA.Programmer;
+import objectOrientedProgramming.packA.Salesperson;
 
 public class Lab2_650426 {
     public static void main(String[] args) {

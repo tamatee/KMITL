@@ -1,4 +1,8 @@
-import packA.ArrayProcessor;
+package objectOrientedProgramming;
+
+
+import objectOrientedProgramming.packA.ArrayProcessor;
+
 import java.util.*;
 import java.util.stream.*;
 

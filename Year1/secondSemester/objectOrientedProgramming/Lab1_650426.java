@@ -1,5 +1,8 @@
+package objectOrientedProgramming;
+
+import objectOrientedProgramming.packA.Lab1Coder;
+
 import java.util.ArrayList;
-import packA.*;
 
 public class Lab1_650426 {
     static Lab1Coder keng;

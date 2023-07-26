@@ -1,4 +1,8 @@
-import packA.*;
+package objectOrientedProgramming;
+
+
+import objectOrientedProgramming.packA.Client;
+import objectOrientedProgramming.packA.Customer;
 
 /**
  * Lab6_65050426
@@ -27,8 +31,8 @@ public class Lab6_650426 {
             preeda.spend(monthly[i]);
     }
     public static void q3() {
-        MemberTypeWithDiscount p = MemberTypeWithDiscount.GOLD;
-        MemberTypeWithDiscount q = MemberTypeWithDiscount.GOLD;
-        System.out.println(p == q); //true ...why?
+//        MemberTypeWithDiscount p = MemberTypeWithDiscount.GOLD;
+//        MemberTypeWithDiscount q = MemberTypeWithDiscount.GOLD;
+//        System.out.println(p == q); //true ...why?
     }
 }
