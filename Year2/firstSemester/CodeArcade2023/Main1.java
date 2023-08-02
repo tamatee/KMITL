@@ -5,11 +5,7 @@ import java.util.Scanner;
 public class Main1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // Input the number of test cases
         int t = scanner.nextInt();
-
-        // Process each test case
         for (int i = 0; i < t; i++) {
             int a = scanner.nextInt();
             int b = scanner.nextInt();
