@@ -1,11 +1,7 @@
-import java.util.Random;
-
 import javax.swing.*;
 import java.awt.*;
 
 public class GraphicSwing extends JPanel {
-
-    private final Random random = new Random();
 
     public static void main(String[] args) {
         GraphicSwing m = new GraphicSwing();
@@ -62,10 +58,6 @@ public class GraphicSwing extends JPanel {
 
             D += 2 * dy;
         }
-    }
-
-    private Color randomColor() {
-        return new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));
     }
 
     private void plot(Graphics g, int x, int y) {
