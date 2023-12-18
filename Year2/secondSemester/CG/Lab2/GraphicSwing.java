@@ -8,8 +8,8 @@ public class GraphicSwing extends JPanel {
 
         JFrame f = new JFrame();
         f.add(m);
-        f.setTitle("First Swing");
-        f.setSize(300, 300);
+        f.setTitle("Second Swing");
+        f.setSize(600, 600);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
     }
@@ -17,10 +17,74 @@ public class GraphicSwing extends JPanel {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        line(g, 0, 0, 200, 200);
+        g.setColor(Color.RED);
+        naive_line(g, 100, 100, 400, 200);
+        g.setColor(Color.GREEN);
+        naive_line(g, 400, 300, 100, 200);
+        g.setColor(Color.BLUE);
+        naive_line(g, 100, 100, 200, 400);
+
+        // g.setColor(Color.RED);
+        // dda_line(g, 100, 100, 400, 200);
+        // g.setColor(Color.GREEN);
+        // dda_line(g, 400, 300, 100, 200);
+        // g.setColor(Color.BLUE);
+        // dda_line(g, 100, 100, 200, 400);
+
+        // g.setColor(Color.RED);
+        // bresenham_line(g, 100, 100, 400, 200);
+        // g.setColor(Color.GREEN);
+        // bresenham_line(g, 400, 300, 100, 200);
+        // g.setColor(Color.BLUE);
+        // bresenham_line(g, 100, 100, 200, 400);
     }
 
-    public void line(Graphics g, int x1, int y1, int x2, int y2) {
+    public void naive_line(Graphics g, int x1, int y1, int x2, int y2) {
+        float dx = x2 - x1;
+        float dy = y2 - y1;
+        float b = y1 - (dy / dx) * x1;
+
+        for (int x = Math.min(x1, x2); x < Math.max(x1, x2); x++) {
+            int y = (Math.round((dy / dx) * x + b));
+            plot(g, x, y);
+        }
+    }
+
+    public void dda_line(Graphics g, int x1, int y1, int x2, int y2) {
+        float dx = x2 - x1;
+        float dy = y2 - y1;
+        float x = x1;
+        float y = y1;
+        float m = dy / dx;
+
+        if (m <= 1 && m >= 0) {
+            y = Math.min(y1, y2);
+            for (x = Math.min(x1, x2); x < Math.max(x1, x2); x++) {
+                y = y + m;
+                plot(g, (int) x, Math.round(y));
+            }
+        } else if (m <= -1) {
+            y = Math.max(y1, y2);
+            for (x = Math.max(x1, x2); x > Math.min(x1, x2); x--) {
+                y = y + m;
+                plot(g, (int) x, Math.round(y));
+            }
+        } else if (m > 1) {
+            x = Math.min(x1, x2);
+            for (y = Math.min(y1, y2); y < Math.max(y1, y2); y++) {
+                x = x + 1 / m;
+                plot(g, Math.round(x), (int) y);
+            }
+        } else {
+            x = Math.max(x1, x2);
+            for (y = Math.max(y1, y2); y > Math.min(y1, y2); y--) {
+                x = x + 1 / m;
+                plot(g, Math.round(x), (int) y);
+            }
+        }
+    }
+
+    public void bresenham_line(Graphics g, int x1, int y1, int x2, int y2) {
         int dx = Math.abs(x2 - x1);
         int dy = Math.abs(y2 - y1);
         int D = 0;
