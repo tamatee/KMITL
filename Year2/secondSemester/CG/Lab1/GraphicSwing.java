@@ -26,7 +26,7 @@ public class GraphicSwing extends JPanel {
 
         g.drawString("Hello", 40, 40);
         g.setColor(Color.BLUE);
-        g.fillRect(130, 30, 100, 80);
+        g.drawRect(130, 30, 100, 80);
         g.drawOval(30, 130, 50, 60);
         g.setColor(Color.RED);
         g.drawLine(0, 0, 200, 30);
