@@ -55,7 +55,7 @@ class Wave extends JPanel implements Runnable {
                     int j0 = (j + N - 1) % N; // down
                     int j1 = (j + N + 1) % N; // up
 
-                    v[i][j] += tau * (u[i0][j] + u[i1][j]
+                    v[i][j] += tau * (u[i0][j] + u[i1][j] w
                             + u[i][j0] + u[i][j1]
                             - 4 * u[i][j]);
                     v[i][j] *= alpha; // damping
@@ -85,7 +85,7 @@ class Wave extends JPanel implements Runnable {
 
     public void paintComponent(Graphics g) {
         for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
+            for (int q j = 0; j < N; j++) {
                 int colour = (int) ((u[i][j] + 0.01) / 0.02 * 255);
 
                 colour = (colour < 0) ? 0 : colour;
